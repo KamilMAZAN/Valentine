@@ -25,6 +25,7 @@ body {
     padding: 40px;
     border-radius: 20px;
     text-align: center;
+    position: relative;
 }
 button {
     font-size: 18px;
@@ -36,6 +37,8 @@ button {
     background: #ff4d6d;
     color: white;
 }
+
+#no { background: #ccc; position: absolute; }
 </style>
 </head>
 
@@ -43,9 +46,11 @@ button {
 
 <div class="container">
     <h1>Es-tu vraiment sûre ? 💕</h1>
-    <p>Y’a pas de retour en arrière 😈</p>
+    <p>Y’a pas de retour en arrière </p>
 
     <button onclick="sendEmail()">Oui, je confirme 💖</button>
+
+    <button id="no">Non</button>
 
     <p id="status"></p>
 </div>
@@ -69,7 +74,26 @@ function sendEmail() {
             "Oups… une erreur est survenue 😢";
     });
 }
+
+// Effet "le Non s'enfuit" comme sur la première page
+const noButton = document.getElementById("no");
+
+noButton.addEventListener("mouseover", () => {
+    const btnWidth = noButton.offsetWidth;
+    const btnHeight = noButton.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth - 10; // 10px marge
+    const maxY = window.innerHeight - btnHeight - 10;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noButton.style.position = "fixed"; // pour se déplacer par rapport à l'écran
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
+});
 </script>
+
 
 </body>
 </html>

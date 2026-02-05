@@ -28,6 +28,10 @@ button {
     cursor: pointer;
     margin: 10px;
 }
+img {
+    width: 350px;
+    margin-bottom: 20px;
+}
 #yes { background: #ff4d6d; color: white; }
 #no { background: #ccc; position: absolute; }
 </style>
@@ -35,12 +39,19 @@ button {
 
 <body>
 
-<div class="container">
-    <h1>Veux-tu être ma Valentine 2026 ? 💘</h1>
-    <button id="yes" onclick="location.href='confirm.html'">Oui</button>
-</div>
+    <div class="container">
+        <img src="golden.webp" alt="Love">
+    
+        <h1>Veux-tu être ma Valentine ? 💘</h1>
+        
+        <button id="no">Non</button>
+        <button id="yes" onclick="location.href='confirm.html'">Oui</button>
+        
+        
+    </div>
 
-<button id="no">Non</button>
+
+
 
 <script>
 const noButton = document.getElementById("no");
@@ -54,4 +65,3 @@ noButton.addEventListener("mouseover", () => {
 
 </body>
 </html>
-
