@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ma Valentine 💖</title>
+<style>
+body {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+h1 { color: #ff4d6d; }
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+#yes { background: #ff4d6d; color: white; }
+#no { background: #ccc; position: absolute; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Veux-tu être ma Valentine ? 💘</h1>
+    <button id="yes" onclick="location.href='confirm.html'">Oui</button>
+</div>
+
+<button id="no">Non</button>
+
+<script>
+const noButton = document.getElementById("no");
+noButton.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>

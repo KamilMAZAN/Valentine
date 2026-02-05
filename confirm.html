@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Confirmation Finale 💖</title>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("jcfUqTX4ohwtT3dYY");
+})();
+</script>
+
+<style>
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    background: #ff4d6d;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Es-tu vraiment sûre ? 💕</h1>
+    <p>Y’a pas de retour en arrière 😈</p>
+
+    <button onclick="sendEmail()">Oui, je confirme 💖</button>
+
+    <p id="status"></p>
+</div>
+
+<script>
+function sendEmail() {
+    emailjs.send(
+        "service_32udebk",
+        "template_sqx1cbd",
+        {
+            to_name: "Mon Amour"
+        }
+    ).then(() => {
+        document.querySelector(".container").innerHTML = `
+            <h1>💘 C’est officiel 💘</h1>
+            <p>Tu es maintenant ma Valentine ❤️</p>
+            <p>Regarde ta boîte mail 😏</p>
+        `;
+    }, (error) => {
+        document.getElementById("status").innerText =
+            "Oups… une erreur est survenue 😢";
+    });
+}
+</script>
+
+</body>
+</html>
